@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Escolha um assunto e veja o conteúdo diretamente na tela.">
+    <meta name="keywords" content="tópicos, conteúdo, impressão direta, html">
+    <meta name="author" content="Seu Nome">
+    <meta name="robots" content="index, follow">
+    <title>Escolha um Tópico</title>
+
+    <!-- Estilos CSS Internos -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: palevioletred;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container label {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e2f7e2;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+            text-align: left;
+            display: none;
+        }
+
+        .print-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .print-button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            color: black;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Escolha um Tópico</h1>
+    </header>
+
+    <section>
+        <div class="form-container">
+            <h2>Escolha um Tópico de Interesse:</h2>
+            <form id="form" onsubmit="mostrarConteudo(event)">
+                <label for="topic">Selecione um Tópico:</label>
+                <select name="topic" id="topic" required>
+                    <option value="">Selecione...</option>
+                    <option value="airbnb">COMEÇAR NO AIRBNB</option>
+                    <option value="encurtador">GANHE DINHEIRO COM ENCURTADOR DE LINK</option>
+                    <option value="vps e hospedagem de sites">VPS E HOSPEDAGENS DE CONFIANÇA</option>
+                </select>
+
+                <button type="submit">Mostrar Conteúdo</button>
+            </form>
+
+            <!-- Conteúdo exibido dinamicamente -->
+            <div id="result-container" class="result-container">
+                <h3>Conteúdo Relacionado ao Tópico:</h3>
+                <div id="result"></div>
+                <button class="print-button" onclick="window.print()">Imprimir Conteúdo</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="https://shrtlk.biz/85XzH">Política de Privacidade</a> | <a href="https://shrtlk.biz/85XzH">Termos de Serviço</a></p>
+    </footer>
+
+    <script>
+        function mostrarConteudo(event) {
+            event.preventDefault();
+
+            const topic = document.getElementById("topic").value;
+            let conteudo = '';
+
+            switch(topic) {
+                case "vps e hospedagem de sites":
+                    conteudo=`
+                    <h4>Precisa de uma hospedagem de sites para o seu sistema ou VPS robusto?</h4>
+                    <p>Nós temos a solução ideal para você. Oferecemos hospedagens confiáveis e servidores VPS de alto desempenho para sites, sistemas, lojas virtuais e mais.</p>
+                    <ul>
+                        <li>Servidores com alta disponibilidade</li>
+                        <li>Suporte técnico 24/7</li>
+                        <li>Painel de controle fácil de usar (cPanel, Plesk, etc.)</li>
+                        <li>Planos escaláveis conforme seu crescimento</li>
+                        <li>Instalação rápida e gratuita</li>
+                    </ul>
+                    <p>Entre em contato conosco para conhecer os planos disponíveis e migrar seu sistema com segurança.</p>
+                    <a href="https://victorxx.github.io/vpsvendagihubrandom01/">COMECE HJ MESMO</a>
+                    <a href="https://hostinger.com.br/?REFERRALCODE=1VICTOR444">TEMOS ESSA OPÇÃO TAMBÉM
+                    `;
+                    break;
+                case 'airbnb':
+                    conteudo = `
+                        <h4>Como Começar no Airbnb</h4>
+                        <p>Você pode se tornar um anfitrião e começar a ganhar dinheiro alugando seu espaço. Cadastre-se no site oficial do Airbnb e siga os passos para criar seu anúncio.</p>
+                        <ul>
+                            <li>Crie uma conta no Airbnb</li>
+                            <li>Cadastre seu imóvel</li>
+                            <li>Defina preços e regras</li>
+                            <li>Comece a receber hóspedes</li>
+                            <a href="https://www.airbnb.com.br/r/saibvictore?s=6&t=061n0g">COMECE HJ MESMO</a>
+                        </ul>
+                    `;
+                    break;
+
+                case 'encurtador':
+                    conteudo = `
+                        <h4>Ganhe Dinheiro com Encurtador de Links</h4>
+                        <p>Use plataformas como Adf.ly, Shorte.st ou Linkvertise para encurtar seus links e ganhar por cada clique. Divulgue em redes sociais, fóruns ou sites com alto tráfego.</p>
+                        <ul>
+                            <li>Cadastre-se em um serviço de encurtador</li>
+                            <li>Encurte seus links</li>
+                            <li>Compartilhe os links</li>
+                            <li>Ganhe dinheiro por visualização</li>
+                            QUER SABER SOBRE A RESPEITO FAVOR ENVIAR MENSAGEM PARA WHATSAPP (027)99986-0405 OU
+                            <a href="https://encurta.net/ref/113084217886494396012">COMECE HJ MESMO</a>
+                        </ul>
+                    `;
+                    break;
+
+                default:
+                    conteudo = '<p>Selecione um tópico válido.</p>';
+            }
+
+            document.getElementById("result").innerHTML = conteudo;
+            document.getElementById("result-container").style.display = "block";
+        }
+
+        // Centralizar tela ao carregar
+        window.onload = () => {
+            const scrollX = (document.body.scrollWidth - window.innerWidth) / 2;
+            const scrollY = (document.body.scrollHeight - window.innerHeight) / 2;
+            window.scrollTo(scrollX, scrollY);
+        };
+    </script>
+
+</body>
+</html>
